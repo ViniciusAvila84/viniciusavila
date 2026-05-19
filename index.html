@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinicius Avila | Desenvolvedor Web & Editor de Vídeo</title>
+    <meta name="description"
+        content="Portfólio de Vinicius Avila - Desenvolvedor de Sistemas Web, Especialista em VoIP Asterisk e Editor de Vídeos.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css?v=1.3">
+    <style>
+        /* Fallback Game Styles */
+        .game-container {
+            width: 100% !important;
+            max-width: 800px !important;
+            height: 300px !important;
+            background: linear-gradient(180deg, #0a0a0a 0%, #151515 100%) !important;
+            margin: 0 auto !important;
+            border-radius: 15px !important;
+            border: 2px solid #333 !important;
+            position: relative !important;
+            overflow: hidden !important;
+            cursor: pointer !important;
+            display: block !important;
+        }
+
+        .player {
+            position: absolute !important;
+            bottom: 0;
+            left: 50px !important;
+            width: 60px !important;
+            height: 60px !important;
+            border-radius: 50% !important;
+            overflow: hidden !important;
+            border: 2px solid #E63946 !important;
+            z-index: 10 !important;
+        }
+
+        .player img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+        }
+
+        .obstacle {
+            position: absolute !important;
+            bottom: 0 !important;
+            right: -50px !important;
+            width: 30px !important;
+            height: 30px !important;
+            background-color: #555 !important;
+            border-radius: 5px !important;
+            z-index: 5 !important;
+        }
+
+        #score {
+            position: absolute !important;
+            top: 20px !important;
+            right: 20px !important;
+            font-weight: 700 !important;
+            font-size: 1.2rem !important;
+            color: #f5f5f5 !important;
+            z-index: 15 !important;
+        }
+
+        .jumping {
+            animation: jump 0.5s linear !important;
+        }
+
+        @keyframes jump {
+            0% {
+                bottom: 0;
+            }
+
+            30% {
+                bottom: 100px;
+            }
+
+            70% {
+                bottom: 100px;
+            }
+
+            100% {
+                bottom: 0;
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <nav class="container nav-container">
+            <a href="#" class="logo">Avila's<span class="accent">Corp</span></a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-list">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#systems">Sistemas</a></li>
+                <li><a href="#websites">Sites</a></li>
+                <li><a href="#videos">Vídeos</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1>Olá, sou <span class="accent">Vinicius Avila</span></h1>
+                    <h2>Desenvolvedor Full Stack & Especialista VoIP</h2>
+                    <p>Transformando ideias em soluções digitais robustas. Proprietário da Avila's Corp, especializado
+                        em Sistemas Web, Telefonia IP (Asterisk) e Edição de Vídeo.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Entrar em Contato</a>
+                        <a href="#systems" class="btn btn-outline">Ver Trabalhos</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="img-wrapper">
+                        <img src="midias/foto_vinicius.jpeg" alt="Vinicius Avila">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-padding bg-darker">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Sobre Mim</h2>
+                    <div class="line"></div>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Com vasta experiência no mercado de tecnologia, atuo no desenvolvimento de soluções
+                            personalizadas para empresas. Minha expertise abrange desde a criação de sites
+                            institucionais até sistemas web complexos com integração de telefonia.</p>
+                        <div class="skills-grid">
+                            <div class="skill-card">
+                                <i class="fa-solid fa-code"></i>
+                                <h3>Desenvolvimento Web</h3>
+                                <p>HTML5, CSS3, JavaScript, PHP, WordPress</p>
+                            </div>
+                            <div class="skill-card">
+                                <i class="fa-solid fa-phone-volume"></i>
+                                <h3>Telefonia VoIP</h3>
+                                <p>Especialista em Asterisk, PABX Web, URAs</p>
+                            </div>
+                            <div class="skill-card">
+                                <i class="fa-solid fa-video"></i>
+                                <h3>Edição de Vídeo</h3>
+                                <p>Premiere, After Effects, YouTube</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Systems Section -->
+        <section id="systems" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Sistemas Desenvolvidos</h2>
+                    <div class="line"></div>
+                </div>
+
+                <div class="project-block">
+                    <div class="project-info">
+                        <h3>Conecttor - PABX Web</h3>
+                        <p>Sistema desenvolvido para a empresa STV. Uma central PABX Web completa para gestão de
+                            telefonia.</p>
+                        <span class="tag">Web System</span>
+                        <span class="tag">VoIP</span>
+                    </div>
+                    <div class="project-gallery">
+                        <img src="midias/conecttor/conecttor1.jpg" alt="Sistema Conecttor Tela 1">
+                        <img src="midias/conecttor/conecttor2.jpg" alt="Sistema Conecttor Tela 2">
+                        <img src="midias/conecttor/conecttor3.jpg" alt="Sistema Conecttor Tela 3">
+                    </div>
+                </div>
+
+                <div class="project-block reverse">
+                    <div class="project-info">
+                        <h3>Izzzy Call - URA</h3>
+                        <p>Sistema de URA (Unidade de Resposta Audível) desenvolvido para a empresa BL Cobrança.</p>
+                        <span class="tag">Automação</span>
+                        <span class="tag">Asterisk</span>
+                    </div>
+                    <div class="project-gallery">
+                        <img src="midias/izzycall/izzy1.jpg" alt="Sistema Izzy Call Tela 1">
+                        <img src="midias/izzycall/izzy2.jpg" alt="Sistema Izzy Call Tela 2">
+                        <img src="midias/izzycall/izzy3.jpg" alt="Sistema Izzy Call Tela 3">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Websites Section -->
+        <section id="websites" class="section-padding bg-darker">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Sites Desenvolvidos</h2>
+                    <div class="line"></div>
+                </div>
+                <div class="sites-grid">
+                    <a href="https://www.ontimeseguroviagem.com.br/" target="_blank" class="site-card">
+                        <div class="icon"><i class="fa-solid fa-plane"></i></div>
+                        <h3>Ontime Seguro Viagem</h3>
+                        <p>Site institucional</p>
+                        <div class="link-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                    </a>
+                    <a href="https://www.dmangueiraseconexoes.vfx.net.br/site" target="_blank" class="site-card">
+                        <div class="icon"><i class="fa-solid fa-industry"></i></div>
+                        <h3>D Mangueiras</h3>
+                        <p>Catálogo de produtos</p>
+                        <div class="link-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                    </a>
+                    <a href="https://gsiservicos.com.br/" target="_blank" class="site-card">
+                        <div class="icon"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3>GSI Serviços</h3>
+                        <p>Serviços corporativos</p>
+                        <div class="link-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                    </a>
+                    <a href="http://www.montitos.com.br" target="_blank" class="site-card">
+                        <div class="icon"><i class="fa-solid fa-utensils"></i></div>
+                        <h3>Montitos</h3>
+                        <p>Alimentação</p>
+                        <div class="link-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                    </a>
+                    <a href="http://www.clickmidiars.com.br" target="_blank" class="site-card">
+                        <div class="icon"><i class="fa-solid fa-bullhorn"></i></div>
+                        <h3>Click Mídia RS</h3>
+                        <p>Agência de Marketing</p>
+                        <div class="link-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Editing Section -->
+        <section id="videos" class="section-padding">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Edição de Vídeo</h2>
+                    <div class="line"></div>
+                </div>
+                <div class="video-content">
+                    <div class="video-text">
+                        <p>Edição profissional para canais do YouTube e vídeos institucionais.</p>
+                        <a href="https://www.youtube.com/@ComentandoTube" target="_blank" class="channel-link">
+                            <i class="fa-brands fa-youtube"></i>
+                            <span>Canal @ComentandoTube</span>
+                        </a>
+                    </div>
+                    <div class="video-gallery">
+                        <img src="midias/comentando/comentando1.jpg" alt="Thumb Video 1">
+                        <img src="midias/comentando/comentando2.jpg" alt="Thumb Video 2">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding bg-accent-soft">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <h2>Vamos trabalhar juntos?</h2>
+                    <p>Entre em contato para discutirmos seu próximo projeto.</p>
+                    <div class="contact-info">
+                        <a href="mailto:viniciusavila84@gmail.com" class="contact-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            viniciusavila84@gmail.com
+                        </a>
+                        <a href="https://wa.me/5551984468922" target="_blank" class="contact-item">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            (51) 98446-8922
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Game Section -->
+        <section id="game-section" class="section-padding bg-darker">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Descanso do Guerreiro</h2>
+                    <p>Um pequeno desafio para relaxar!</p>
+                    <div class="line"></div>
+                </div>
+                <div class="game-container" id="game-canvas">
+                    <div id="player" class="player">
+                        <img src="midias/foto_vinicius.jpeg" alt="Vinicius"
+                            style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div id="score">Score: 0</div>
+                    <div id="game-over-overlay" class="hidden">
+                        <h3>Fim de Jogo!</h3>
+                        <p id="final-score">Pontuação: 0</p>
+                        <button id="restart-btn" class="btn btn-primary">Tentar Novamente</button>
+                    </div>
+                    <div id="start-overlay">
+                        <p>Pressione <strong>Espaço</strong> ou <strong>Clique</strong> para saltar!</p>
+                        <button id="start-btn" class="btn btn-primary">Iniciar Jogo</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Avila's Corp. Todos os direitos reservados.</p>
+            <div class="socials">
+                <!-- Add other social links if available -->
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="game.js?v=1.3"></script>
+</body>
+
+</html>

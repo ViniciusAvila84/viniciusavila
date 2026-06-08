@@ -2,10 +2,10 @@
   --bg: #050505;
   --surface: #101214;
   --text: #f5f5f5;
-  --muted: #b3b3b3;
-  --red: #e92d2d;
-  --blue: #2978ff;
-  --border: rgba(255, 255, 255, 0.12);
+  --muted: #d4d4d4;
+  --orange: #ff8c00;
+  --accent: #ffa233;
+  --border: rgba(255, 140, 0, 0.22);
 }
 
 * {
@@ -15,8 +15,9 @@
 html, body {
   margin: 0;
   min-height: 100%;
-  background: radial-gradient(circle at top, rgba(41, 120, 255, 0.16), transparent 26%),
-              linear-gradient(180deg, #050505 0%, #040404 100%);
+  background: radial-gradient(circle at top left, rgba(255, 140, 0, 0.16), transparent 24%),
+              radial-gradient(circle at bottom right, rgba(255, 112, 0, 0.08), transparent 30%),
+              linear-gradient(180deg, #050505 0%, #070707 100%);
   color: var(--text);
   font-family: 'Inter', system-ui, sans-serif;
 }
@@ -49,15 +50,27 @@ button, input, textarea {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem 0;
+  padding: 0.8rem 0;
 }
 
 .brand {
-  font-size: 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 1.8rem;
   font-weight: 800;
   color: #fff;
   text-decoration: none;
   letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.logo-img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  display: none;
+  flex-shrink: 0;
 }
 
 .nav-links {
@@ -94,33 +107,61 @@ button, input, textarea {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--red), var(--blue));
+  background: linear-gradient(135deg, var(--orange), var(--accent));
   color: #fff;
 }
 
 .btn-secondary {
   background: transparent;
-  border-color: rgba(255,255,255,0.16);
+  border-color: rgba(255, 140, 0, 0.28);
   color: #fff;
 }
 
 .hero-section {
   padding: 6rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(255, 140, 0, 0.1), transparent 25%),
+              radial-gradient(circle at bottom right, rgba(255, 140, 0, 0.08), transparent 22%);
+  pointer-events: none;
 }
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.2fr 0.9fr;
+  grid-template-columns: 0.5fr 1.2fr 0.9fr;
   gap: 3rem;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .eyebrow {
-  color: var(--blue);
+  color: var(--orange);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: .12em;
   margin-bottom: 1rem;
+}
+
+.hero-image-logo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 2rem;
+}
+
+.hero-logo {
+  width: 220px;
+  height: auto;
+  object-fit: contain;
+}
+
+.hero-copy {
+  grid-column: 2;
 }
 
 .hero-copy h1 {
@@ -130,13 +171,18 @@ button, input, textarea {
 }
 
 .hero-copy h1 span {
-  color: var(--red);
+  color: var(--orange);
 }
 
 .hero-copy p {
   max-width: 60ch;
   color: var(--muted);
   line-height: 1.8;
+}
+
+.hero-actions .btn-secondary {
+  border-color: rgba(255, 140, 0, 0.24);
+  color: #fff;
 }
 
 .hero-actions {
@@ -149,6 +195,7 @@ button, input, textarea {
 .hero-visual {
   display: grid;
   gap: 1.5rem;
+  grid-column: 3;
 }
 
 .hero-card {
@@ -202,7 +249,7 @@ button, input, textarea {
 
 .section-title span {
   display: inline-block;
-  color: var(--blue);
+  color: var(--orange);
   font-weight: 700;
   margin-bottom: .75rem;
 }

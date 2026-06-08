@@ -1,0 +1,13 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title">
+  <title>Logo DC3 Print</title>
+  <defs>
+    <linearGradient id="orangeGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffb347" />
+      <stop offset="100%" stop-color="#ff8c00" />
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="56" fill="#111" stroke="url(#orangeGlow)" stroke-width="6" />
+  <path d="M31 63 L43 60 L51 49 L82 47 L88 51 L64 54 L60 62 L65 67 L82 63 L74 68 L63 73 L51 78 L45 77 L38 71 Z" fill="#fff" />
+  <path d="M47 50 L58 47 L84 45 L88 49 L61 52 L55 58 L61 63 L83 60 L79 65 L65 68 L53 72 L46 71 L39 66 Z" fill="url(#orangeGlow)" opacity="0.95" />
+  <circle cx="60" cy="60" r="4" fill="#111" />
+</svg>
